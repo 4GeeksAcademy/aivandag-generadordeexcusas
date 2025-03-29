@@ -10,6 +10,11 @@ window.onload = function () {
 document.querySelector(".excuse").innerHTML = excusas()
 };
 
+function getRandomWord(arr) {
+  let result= arr[Math.floor(Math.random()*arr.length)]
+  return result 
+}
+
 function excusas() {
   let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
   let action = ['ate', 'peed', 'crushed', 'broke'];
@@ -21,7 +26,10 @@ function excusas() {
   let que = what[Math.floor(Math.random()* what.length)]
   let cuando = when[Math.floor(Math.random()* when.length)]
 
+
+
+
   return(
-    quien + " " + accion + " " + que + " " + cuando
+    getRandomWord(who) + " " + getRandomWord(action)+ " " + getRandomWord(what) + " " + getRandomWord(when)
   )
 }
